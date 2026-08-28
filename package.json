@@ -1,0 +1,49 @@
+{
+  "name": "stub-translator",
+  "version": "1.0.0",
+  "description": "The reference vendor translator for the intisy-ai ecosystem: the smallest thing that satisfies the Translator SPI, kept green against every gate.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "author": "intisy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intisy-ai/stub-translator.git"
+  },
+  "keywords": [
+    "intisy-ai",
+    "vendor-translator",
+    "ir",
+    "example",
+    "template"
+  ],
+  "files": [
+    "dist/",
+    "plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "emit:teavm": "node node_modules/@intisy-ai/api/scripts/emit-dts.mjs --java-dir . --module :teavm-stub --out src/generated",
+    "build:teavm": "node node_modules/@intisy-ai/api/scripts/teavm-build.mjs --java-dir . --module :teavm-stub --out src/generated/stub-translator.teavm.js",
+    "build": "npm run emit:teavm && npm run build:teavm && tsc && node build.mjs",
+    "test": "npm run build && vitest run",
+    "prepublishOnly": "npm run build",
+    "docs": "typedoc"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.25.12",
+    "typedoc": "^0.28.20",
+    "typescript": "^5.4.0",
+    "vitest": "^3.2.6"
+  },
+  "dependencies": {
+    "@intisy-ai/api": "^1.6.0",
+    "@intisy-ai/core-ir": "^1.4.0"
+  }
+}

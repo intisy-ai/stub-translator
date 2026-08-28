@@ -1,0 +1,5 @@
+// The reference translator. Zero-dependency, Java-8-clean (TeaVM-transpilable), mirroring core-ir's
+// :ir. Depends on :ir for the Translator interface and the IR types.
+dependencies {
+    githubImplementation "intisy-ai:core-ir:1.4.0:ir"
+}

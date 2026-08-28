@@ -1,0 +1,25 @@
+{
+  "$schema": "https://intisy-ai.github.io/api/schema/plugin.schema.json",
+  "id": "stub-translator",
+  "api": 1,
+  "displayName": "Stub translator",
+  "publish": {
+    "scopedOnly": true,
+    "generatedReadme": true,
+    "jarModule": [
+      "stub"
+    ]
+  },
+  "repo": {
+    "role": "Reference vendor translator and starting point",
+    "category": "vendor-translator",
+    "tech": [
+      "java",
+      "typescript"
+    ],
+    "topics": [
+      "example",
+      "template"
+    ]
+  }
+}
