@@ -1,6 +1,6 @@
 {
   "name": "stub-translator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The reference vendor translator for the intisy-ai ecosystem: the smallest thing that satisfies the Translator SPI, kept green against every gate.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
