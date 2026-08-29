@@ -1,4 +1,4 @@
-import { guardDocumentation, guardNoSuppressions } from "@intisy-ai/api/testing";
+import { guardDocumentation, guardNoSuppressions } from "@intisy/bayonet/testing";
 
 // generated/ is emitted from the Java surface and compared byte for byte by its own drift test, so
 // it is not hand-documented here: its comments come from the Java it was emitted out of.
