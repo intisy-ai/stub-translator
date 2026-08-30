@@ -10,7 +10,7 @@ const repo = fileURLToPath(new URL("../..", import.meta.url));
 it("keeps the committed teavm declarations identical to what the java emits", () => {
   const scratch = mkdtempSync(join(tmpdir(), "stub-dts-"));
   execFileSync(process.execPath, [
-    join(repo, "node_modules", "@intisy-ai", "api", "scripts", "emit-dts.mjs"),
+    join(repo, "node_modules", "@intisy", "bayonet", "scripts", "emit-dts.mjs"),
     "--java-dir", repo,
     "--module", ":teavm-stub",
     "--out", scratch,
@@ -21,4 +21,5 @@ it("keeps the committed teavm declarations identical to what the java emits", ()
   for (const name of emitted) {
     expect(readFileSync(join(scratch, name), "utf8")).toBe(readFileSync(join(repo, "src", "generated", name), "utf8"));
   }
-});
+  // This spawns a gradle build, which vitest's five-second default cannot cover on a loaded machine.
+}, 300_000);
